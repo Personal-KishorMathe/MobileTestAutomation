@@ -1,0 +1,57 @@
+<settings>
+  <activeProfiles>
+    <activeProfile>securecentral</activeProfile>
+  </activeProfiles>
+  <profiles>
+    <profile>
+      <id>securecentral</id>
+      <repositories>
+        <repository>
+          <id>central</id>
+          <url>https://repo1.maven.org/maven2</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>central</id>
+          <url>https://repo1.maven.org/maven2</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+    <profiles>
+  <profile>
+    <id>km-artifact</id>
+    <activation>
+      <activeByDefault>true</activeByDefault>
+    </activation>
+    <repositories>
+      <repository>
+        <id>km-artifact</id>
+        <url>https://km-905418316337.d.codeartifact.ap-south-1.amazonaws.com/maven/artifact/</url>
+      </repository>
+    </repositories>
+  </profile>
+</profiles>
+  </profiles>
+  <servers>
+  <server>
+    <id>km-artifact</id>
+    <username>aws</username>
+    <password>${env.CODEARTIFACT_AUTH_TOKEN}</password>
+  </server>
+</servers>
+<mirrors>
+  <mirror>
+    <id>km-artifact</id>
+    <name>km-artifact</name>
+    <url>https://km-905418316337.d.codeartifact.ap-south-1.amazonaws.com/maven/artifact/</url>
+    <mirrorOf>*</mirrorOf>
+  </mirror>
+</mirrors>
+</settings>
